@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 
 import routes from './routes/routes';
+import customerRoutes from './routes/Customer.routes';
 
 dotenv.config();
 
@@ -14,5 +15,6 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 app.get('/', routes);
+app.use('/customers', customerRoutes);
 
 export default app;
